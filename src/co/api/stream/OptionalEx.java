@@ -17,7 +17,9 @@ public class OptionalEx {
 		// System.out.println("OUT: " + myOptionalUser.get());
 		// System.out.println("OUT: " + myOptionalUser.orElse(new User("Default",
 		// "User")));
-		System.out.println("OUT: " + myOptionalUser.orElseGet(() -> new User("Default", "User")));
+		// System.out.println("OUT: " + myOptionalUser.orElseGet(() -> new
+		// User("Default", "User")));
+		System.out.println("OUT: " + myOptionalUser.orElseThrow(null));
 	}
 
 }
