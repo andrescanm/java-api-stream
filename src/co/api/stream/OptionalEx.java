@@ -10,11 +10,12 @@ public class OptionalEx {
 	public static void main(String[] args) {
 		Stream<User> users = Stream.of("q q", "w w", "e e", "r r", "t t", "y y")
 				.map(data -> new User(data.split("")[0], data.split("")[1]))
-				.filter(element -> element.getName().equals("q")).peek(System.out::println);
+				.filter(element -> element.getName().equals("ZZZZZ")).peek(System.out::println);
 
 		Optional<User> myOptionalUser = users.findFirst();
 
-		System.out.println("OUT: " + myOptionalUser.get());
+		// System.out.println("OUT: " + myOptionalUser.get());
+		System.out.println("OUT: " + myOptionalUser.orElse(new User("Default", "User")));
 	}
 
 }
