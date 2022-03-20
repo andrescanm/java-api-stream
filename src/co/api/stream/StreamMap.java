@@ -30,14 +30,14 @@ public class StreamMap {
 
 		System.out.println("------------------");
 		Stream<User> usersStream2 = Stream.of("User1 Lastname1", "User2 Lastname2", "User3 Lastname3")
-				.map(fullName -> new User(fullName.split(" ")[0], fullName.split(" ")[1]))
-				.peek(u -> System.out.println(u)).map(niceUser -> {
+				.map(fullName -> new User(fullName.split(" ")[0], fullName.split(" ")[1])).peek(System.out::println)
+				.map(niceUser -> {
 					String name = niceUser.getName().toLowerCase();
 					niceUser.setName(name);
 					return niceUser;
 				});
 		List<User> listFromUsersStream2 = usersStream2.collect(Collectors.toList());
-		listFromUsersStream2.forEach(u -> System.out.println(u));
+		listFromUsersStream2.forEach(System.out::println);
 
 	}
 }
